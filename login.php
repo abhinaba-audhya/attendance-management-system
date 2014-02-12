@@ -35,4 +35,20 @@
         }
         
     }
+	
+	if($_SESSION['loginas']=='Student')
+    {
+        $result = mysql_query("select password from student where id='$id'") or die(mysql_error());
+        $row = mysql_fetch_array($result);
+	if(($row != NULL) && ($row['password']==$password)) {
+            header('Location:stuindex.php');
+            $_SESSION['started']=1;
+           
+        }
+        else
+        {
+            header('Location:index.php?q=invalid');
+        }
+        
+    }
 ?>

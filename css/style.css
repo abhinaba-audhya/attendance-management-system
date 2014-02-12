@@ -279,6 +279,17 @@ a{
     text-decoration: None;
     cursor: hand;
 }
+#opted_courses
+{
+    text-decoration: underline;
+}
+
+#opted_courses:hover
+{
+    text-decoration: None;
+    cursor: hand;
+}
+
 
 .statuses {
     float: left;

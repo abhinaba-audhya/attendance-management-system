@@ -1,0 +1,38 @@
+function show_opted_courses() {
+     
+    course_canvas1=document.getElementById("course_canvas1");
+    if(flag==0)
+    {
+        var url = "listener1.php?action=show_opted_courses";
+        req = initRequest();
+        req.open("GET", url, true);
+        req.onreadystatechange = callback;
+        req.send(null);
+        flag=1;
+    }
+    else
+    {
+        flag=0;
+        remove_elements(course_canvas1);
+    }
+         
+}
+
+<div class="field">
+            <label>Display Type</label>
+            <select name="type">
+                <option>Present</option>
+                <option>Absent</option>
+                <option>Complete</option>
+            </select>
+        </div>
+
+<div class="field">
+           <br>
+            <input type="checkbox" name="viewst" value="sdfafs"  onclick="show1('hidden');"/>
+           View For Specific student
+        </div>
+<div class="field" >
+            <br><label>ID</label><input type="text" name="id" value="" />
+           
+        </div>

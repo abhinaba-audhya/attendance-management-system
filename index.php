@@ -20,6 +20,10 @@
         if (isset($_SESSION['started']) && $_SESSION['loginas'] == "Faculty" && ($_SESSION['started'] == 1)) {
             header('Location:facindex.php');
         }
+		
+		if (isset($_SESSION['started']) && $_SESSION['loginas'] == "Student" && ($_SESSION['started'] == 1)) {
+            header('Location:stuindex.php');
+        }
         ?>
         <div id="header">
             <br> <br> <br><br><br><br><center>Attendance Management System</center>
@@ -37,6 +41,7 @@
                                 <label>Login as </label> <select name="loginas" size="1">
                                     <option> Admin </option>
                                     <option> Faculty </option>
+									<option> Student </option>
                                 </select>
                                 <br />
                             </div>
