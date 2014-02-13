@@ -32,7 +32,7 @@
 
             <div class="wrapper">
 
-                <div id="corner"> View as Student </div>
+                <div id="corner"></div>
                 <div class="col-center">
                
                     <form name="login" action="login.php" method="post">

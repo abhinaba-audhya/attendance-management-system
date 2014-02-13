@@ -657,7 +657,7 @@ function class_details($con, $c_id, $from, $till) {
 function db_connect() {
     $host = "localhost";
     $user = "root";
-    $pass = "panzer";
+    $pass = "";
     $db = "new_fpa";
     $con = mysqli_connect($host, $user, $pass, $db);
 
@@ -673,7 +673,7 @@ function alter_db_connect() {
     // Make a MySQL Connection
     $host = "localhost";
     $user = "root";
-    $pass = "panzer";
+    $pass = "";
     $db = "new_fpa";
 
     mysql_connect($host, $user, $pass) or die(mysql_error());
