@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 13, 2014 at 05:45 PM
+-- Generation Time: Feb 14, 2014 at 10:46 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -512,30 +512,6 @@ INSERT INTO `registered` (`serial_no`, `name`, `id_no`, `phone_no`, `email_id`) 
 (11, 'S', 'ca9', 264875, 'a@gmail.com'),
 (69, 'fac', 'fac', 7854682, 'a@gmail.com'),
 (68, 'faculty', 'faculty', 5207856, 'a@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `student`
---
-
-CREATE TABLE IF NOT EXISTS `student` (
-  `id` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`id`, `password`) VALUES
-('ca1', 'ca1'),
-('ca10', 'ca10'),
-('ca11', 'ca11'),
-('ca12', 'ca12'),
-('ca13', 'ca13'),
-('ca14', 'ca14');
 
 --
 -- Constraints for dumped tables

@@ -38,9 +38,10 @@
 	
 	if($_SESSION['loginas']=='Student')
     {
-        $result = mysql_query("select password from student where id='$id'") or die(mysql_error());
+        $result = mysql_query("select id_no from registered where id_no='$id'") or die(mysql_error());
         $row = mysql_fetch_array($result);
-	if(($row != NULL) && ($row['password']==$password)) {
+		if($row != NULL)
+		{
             header('Location:stuindex.php');
             $_SESSION['started']=1;
            

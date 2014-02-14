@@ -658,7 +658,7 @@ function db_connect() {
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $db = "new_fpa";
+    $db = "new_fpa1";
     $con = mysqli_connect($host, $user, $pass, $db);
 
     if (mysqli_connect_errno()) 
@@ -674,7 +674,7 @@ function alter_db_connect() {
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $db = "new_fpa";
+    $db = "new_fpa1";
 
     mysql_connect($host, $user, $pass) or die(mysql_error());
     mysql_select_db($db) or die(mysql_error());

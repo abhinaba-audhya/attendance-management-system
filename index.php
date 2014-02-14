@@ -6,9 +6,26 @@
         <link href="css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body id="page">
-
+		<script>
+			function studentchk()
+			{
+				var divOne = document.getElementById("pass1");
+				if (document.login.loginas.value == "Student")
+				{
+					//alert("hello");
+					//var divOne = document.getElementById("pass");
+					
+						divOne.style.visibility = 'hidden';;
+				}
+				else
+				{
+					divOne.style.visibility = 'visible';
+				}
+			}
+		</script>
         <?php
         session_start();
+		$_SESSION['nm']="";
         if (isset($_GET['q']) && $_GET['q'] === 'invalid') {
             echo "<div id='error'> 'Wrong Id or Password'</div>";
         }
@@ -38,10 +55,10 @@
                     <form name="login" action="login.php" method="post">
                         <fieldset>
                             <div class="field">
-                                <label>Login as </label> <select name="loginas" size="1">
+                                <label>Login as </label> <select name="loginas" size="1" onchange='studentchk();'>
                                     <option> Admin </option>
                                     <option> Faculty </option>
-									<option> Student </option>
+									<option value="Student"> Student </option>
                                 </select>
                                 <br />
                             </div>
@@ -49,7 +66,7 @@
                                 <label>Id </label><input type="text" name="id" value="" />
                                 <br>
                             </div>
-                            <div class="field">
+                            <div class="field" id="pass1">
                                 <label>Password </label><input type="password" name="password" value="" />
                             </div><div class="field">
                                 <label></label>

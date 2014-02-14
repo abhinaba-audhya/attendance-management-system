@@ -5,6 +5,13 @@
 
 if(array_key_exists('save', $_POST))
 {
+	$f=$_SESSION['id'];
+	$p=$_POST['password3'];
+	$chkquery = "select password from admin where id='$f'";
+	$result1 = mysql_query($chkquery) or die(mysql_error());
+	$row=mysql_fetch_array($result1);
+   if($_POST['password3']!=$row['password'])
+   echo "<li>Wrong old password";
    if($_POST['password1']==="" )
         echo "<li>passwords do not match";
   else if( $_POST['password1']!=$_POST['password2'])
@@ -14,11 +21,10 @@ if(array_key_exists('save', $_POST))
    else
    {
        $p=$_POST['password1'];
-       $admin   = $_SESSION['id'];
-       $query   =  "update admin set password='$p' where id='$admin'";   
-       $result  = mysql_query($query) or die(mysql_error());
+       $f=$_SESSION['id'];
+       $query =  "update admin set password='$p' where id='$f'";   
+       $result = mysql_query($query) or die(mysql_error());
        echo "updated sucessfully";
-       
       // echo "update faculty set password='$p' where id='$f'";
    }
 
@@ -28,6 +34,10 @@ if(array_key_exists('save', $_POST))
 </div>
 <form name="Change" action="#" method="POST" >
     <fieldset>
+		<div class="field">
+            <label>Old Password</label>
+            <input type="password" name="password3" value="" />
+        </div><br>
         <div class="field">
             <label>New Password</label>
             <input type="password" name="password1" value="" />
